@@ -30,7 +30,8 @@
     "test:coverage": "istanbul-badges-readme",
     "extract:colors": "node -r esm scripts/extract-sass-vars.js",
     "check:types": "npx tsc --noEmit",
-    "postinstall": "npx husky install"
+    "postinstall": "npx husky install",
+    "lighthouse": "npx lighthouse-badges --urls http://localhost:3000 -o lighthouse"
   },
   "dependencies": {
     "axios": "^0.25.0",
@@ -51,8 +52,8 @@
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@testing-library/dom": "^8.19.0",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/node": "17.0.13",
     "@types/styled-components": "^5.1.21",
