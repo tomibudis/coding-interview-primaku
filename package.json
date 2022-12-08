@@ -1,10 +1,10 @@
 {
-  "name": "codelabs-next-web",
-  "version": "0.0.2",
+  "name": "@virtual-spirit/codelabs-next-web",
+  "version": "0.0.1",
   "description": "This boilerplate is a starter nextjs app to building web platform",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomibudis/codelabs-next-web.git"
+    "url": "git+https://github.com/virtualspirit/codelabs-next-web.git"
   },
   "keywords": [
     "boilerplate",
@@ -13,9 +13,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tmibudis/codelabs-next-web/issues"
+    "url": "https://github.com/virtualspirit/codelabs-next-web/issues"
   },
-  "homepage": "https://github.com/tomibudis/codelabs-next-web#readme",
+  "homepage": "https://github.com/virtualspirit/codelabs-next-web#readme",
   "bin": {
     "codelabs-next-web": "bin/cli.js"
   },
