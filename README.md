@@ -59,7 +59,7 @@ open suggestion tailwind we can press with `control + space`
 run script
 
 ```
-npx virtualspirit/codelabs-next-web {appName}
+pnpx virtualspirit/codelabs-next-web {appName}
 ```
 
 When init project successfully. follow the following command script to start
