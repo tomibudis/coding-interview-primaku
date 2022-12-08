@@ -13,8 +13,8 @@ const runCommand = (command) => {
 };
 
 const repoName = process.argv[2];
-const gitCheckoutCommand = `git clone https://github.com/tomibudis/codelabs-next-web.git ${repoName}`;
-const installDepsCommand = `cd ${repoName} && npm install`;
+const gitCheckoutCommand = `git clone https://github.com/virtualspirit/codelabs-next-web.git ${repoName}`;
+const installDepsCommand = `cd ${repoName} && pnpm install`;
 
 console.log(`Init project ${repoName}`);
 const checkedOut = runCommand(gitCheckoutCommand);

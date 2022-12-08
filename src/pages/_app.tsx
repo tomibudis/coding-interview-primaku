@@ -1,9 +1,10 @@
-import "../../src/styles/globals.scss";
+import "../../src/styles/globals.css";
 
 import React from "react";
 import type { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { createStore, Provider } from "~/store";
 
 const configQuery = {
   defaultOptions: {
@@ -14,15 +15,17 @@ const configQuery = {
   },
 };
 
-function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   const isDevEnv = process.env.NEXT_PUBLIC_ENV === "development";
   const [queryClient] = React.useState(() => new QueryClient(configQuery));
   return (
     <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
-      {isDevEnv && <ReactQueryDevtools />}
+      <Provider createStore={createStore}>
+        <Component {...pageProps} />
+        {isDevEnv && <ReactQueryDevtools />}
+      </Provider>
     </QueryClientProvider>
   );
-}
+};
 
 export default App;

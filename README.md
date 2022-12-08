@@ -16,26 +16,50 @@ This is the Next.js application for Web Frontend Template
 
 ```
 - jest & testing-library
-- bootstrap 5
+- tailwindcss
 - react-query
 - nextjs@latest
+- zustand
 - axios
 - dayjs
 ```
 
-## How to Install
+## Prerequisite
+if you are vscode person let's follow our pattern rules to setup editor. otherwise let's ignore this section and jump to the next part.
+first of all you should to ensure installed several extension as follow
+- last version vscode
+- Tailwind CSS IntelliSense
+- Prettier
+- Eslint
+- TODO Highlight
 
-Prerequisite
+and also ensure install on your machine
 
 ```
 node ^v14.17.0
-npm ^6.14.13
+pnpm ^7.18.1
 ```
+when preparation are done let's start the installation
+- pnpm install
+
+once the process finish
+run script `pnpm dev` to run development mode
+
+if want to prod mode
+run script bellow
+- pnpm build
+- pnpm start
+
+Hint:
+open suggestion tailwind we can press with `control + space`
+
+## The usage this template
+
 
 run script
 
 ```
-npx tomibudis/codelabs-next-web {appName}
+npx virtualspirit/codelabs-next-web {appName}
 ```
 
 When init project successfully. follow the following command script to start
@@ -44,24 +68,24 @@ When init project successfully. follow the following command script to start
 
 **Run locally as dev mode**
 
-- npm run install
-- npm run dev
+- pnpm install
+- pnpm run dev
 - open http://localhost:3000
 
 **Build Mode (production)**
 
-- npm run install
-- npm run build
-- npm run start
+- pnpm install
+- pnpm build
+- pnpm start
 - open http://localhost:3000
 
 **uTest**
 
-- npm run test
+- pnpm test
 
 **build coverage badge**
 
-- npm run test:coverage
+- pnpm test:coverage
 
 ### Folder Structure
 
@@ -133,3 +157,6 @@ Additional information can be found [here](https://github.com/KWRI/engineering-r
 1. build application with `npm run build`
 2. run app locally `npm run start`
 3. run `npx lighthouse-badges --urls http://localhost:3000 -o lighthouse`
+
+## Maintainer
+@tomibudis
