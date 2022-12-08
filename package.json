@@ -88,5 +88,6 @@
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "main": "readme.md"
 }
