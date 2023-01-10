@@ -14,8 +14,7 @@ const runCommand = (command) => {
 
 const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone https://github.com/virtualspirit/codelabs-next-web.git ${repoName}`;
-const installDepsCommand = `cd ${repoName} && pnpm install`;
-const removeBinDirCommand = `rm -rf bin`;
+const installDepsCommand = `cd ${repoName} && pnpm install && rm -rf bin`;
 
 console.log(`Init project ${repoName}`);
 const checkedOut = runCommand(gitCheckoutCommand);
@@ -24,9 +23,6 @@ if (!checkedOut) process.exit(-1);
 console.log("Installing dependencies...");
 const installDeps = runCommand(installDepsCommand);
 if (!installDeps) process.exit(-1);
-
-const removeBinDir = runCommand(removeBinDirCommand);
-if (!removeBinDir) process.exit(-1);
 
 console.log(
   "Init project successfully! follow the following command script to start."
