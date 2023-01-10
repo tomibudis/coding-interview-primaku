@@ -1,5 +1,6 @@
+import { UseQueryResult, useQuery } from "@tanstack/react-query";
+
 import axios from "~/utils/axios";
-import { useQuery, UseQueryResult } from "@tanstack/react-query";
 
 interface ResponseTodo {
   id: string;
