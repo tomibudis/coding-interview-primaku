@@ -8,8 +8,8 @@ This is the Next.js application for Web Frontend Template
 
 ## uTests Coverage Status
 
-| Statements                  | Branches                | Functions                 | Lines             |
-| --------------------------- | ----------------------- | ------------------------- | ----------------- |
+| Statements                                                                         | Branches                                                                       | Functions                                                                           | Lines                                                                       |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | ![Statements](https://img.shields.io/badge/statements-77.12%25-red.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-54.23%25-red.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-87.09%25-yellow.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-81.11%25-yellow.svg?style=flat) |
 
 ## What chore library inside this repository?
@@ -17,7 +17,7 @@ This is the Next.js application for Web Frontend Template
 ```
 - jest & testing-library
 - tailwindcss
-- react-query
+- tanstack/react-query
 - nextjs@latest
 - zustand
 - axios
@@ -25,8 +25,10 @@ This is the Next.js application for Web Frontend Template
 ```
 
 ## Prerequisite
+
 if you are vscode person let's follow our pattern rules to setup editor. otherwise let's ignore this section and jump to the next part.
 first of all you should to ensure installed several extension as follow
+
 - last version vscode
 - Tailwind CSS IntelliSense
 - Prettier
@@ -39,7 +41,9 @@ and also ensure install on your machine
 node ^v14.17.0
 pnpm ^7.18.1
 ```
+
 when preparation are done let's start the installation
+
 - pnpm install
 
 once the process finish
@@ -47,6 +51,7 @@ run script `pnpm dev` to run development mode
 
 if want to prod mode
 run script bellow
+
 - pnpm build
 - pnpm start
 
@@ -54,7 +59,6 @@ Hint:
 open suggestion tailwind we can press with `control + space`
 
 ## The usage this template
-
 
 run script
 
@@ -159,4 +163,5 @@ Additional information can be found [here](https://github.com/KWRI/engineering-r
 3. run `npx lighthouse-badges --urls http://localhost:3000 -o lighthouse`
 
 ## Maintainer
+
 @tomibudis
