@@ -152,6 +152,10 @@ Additional information can be found [here](https://github.com/KWRI/engineering-r
 2. run app locally `npm run start`
 3. run `npx lighthouse-badges --urls http://localhost:3000 -o lighthouse`
 
-## Maintainer
+## Maintainers
 
-@tomibudis
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/tomibudis"><img src="https://github.com/tomibudis.png?size=100" width="100px;" alt="Tomi Budi"/><br /><sub><b>Tomi Budi</b></sub></a><br /></td>
+  </tr>
+</table>
