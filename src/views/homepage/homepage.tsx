@@ -40,7 +40,7 @@ const Homepage: React.FC = () => {
               <div>
                 <div>
                   <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
-                    VirtualSpirit
+                    TOMS-STUDIO
                   </h1>
                   <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
                     This is boilerplate for web platform build with nextjs,

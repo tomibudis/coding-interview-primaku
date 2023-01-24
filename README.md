@@ -38,7 +38,7 @@ first of all you should to ensure installed several extension as follow
 and also ensure install on your machine
 
 ```
-node ^v14.17.0
+node ^v18.13.0
 pnpm ^7.18.1
 ```
 
