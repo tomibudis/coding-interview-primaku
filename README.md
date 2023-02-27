@@ -9,6 +9,7 @@
 This is a frontend app auction system that is being developed as part of an interview test for Jitera. The app is being built using the Nextjs (typescript) framework
 
 more detail about the framework here the link https://nextjs.org/
+boilerplate pull from my studio on https://github.com/toms-studio/codelabs-next-web
 
 ## Deployment
 
