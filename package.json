@@ -1,24 +1,18 @@
 {
-  "name": "@virtual-spirit/codelabs-next-web",
+  "name": "auction-fe-web",
   "version": "1.0.3",
-  "description": "This boilerplate is a starter nextjs app to building web platform",
+  "description": "auction frontend web build with nexjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/virtualspirit/codelabs-next-web.git"
+    "url": "git+https://github.com/tomibudis/auction-fe-web"
   },
   "keywords": [
-    "boilerplate",
     "next",
-    "app"
+    "app",
+    "typescript"
   ],
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/virtualspirit/codelabs-next-web/issues"
-  },
-  "homepage": "https://github.com/virtualspirit/codelabs-next-web#readme",
-  "bin": {
-    "codelabs-next-web": "bin/cli.js"
-  },
+  "homepage": "https://github.com/tomibudis/auction-fe-web#readme",
   "author": "tomibudis",
   "scripts": {
     "dev": "next dev",

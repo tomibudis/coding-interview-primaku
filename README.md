@@ -1,6 +1,18 @@
-# Next Typescript Boilerplate
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://avatars.githubusercontent.com/u/122791452?s=200&v=4" width="200" alt="My Logo" /></a>
+</p>
 
-This is the Next.js application for Web Frontend Template
+<h3 align="center">Auction Frontend Web</h3>
+
+## Description
+
+This is a frontend app auction system that is being developed as part of an interview test for Jitera. The app is being built using the Nextjs (typescript) framework
+
+more detail about the framework here the link https://nextjs.org/
+
+## Deployment
+
+host: https://auction-fe-web.vercel.app/
 
 ### Lighthouse
 
@@ -143,8 +155,6 @@ Main types are `fix` and `feat`, however it is possible to also use:
 - `refactor`
 - `perf`
 - `test`
-
-Additional information can be found [here](https://github.com/KWRI/engineering-resources/blob/develop/git/commit_standards.md)
 
 ## Generate lighthouse
 
