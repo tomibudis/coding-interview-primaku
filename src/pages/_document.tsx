@@ -17,7 +17,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="application-name" content="Codelabs Next Web" />
+          <meta name="application-name" content="Auction System" />
           <link
             rel="icon"
             type="image/png"
