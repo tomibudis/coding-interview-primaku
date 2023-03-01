@@ -4,3 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 /* stylelint-enable */
+
+body {
+  background: #f9f9f9;
+}
