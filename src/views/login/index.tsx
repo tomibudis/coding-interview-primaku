@@ -1,15 +1,21 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
 import { loginSchema } from "~/utils/validations";
+
+import usePostLogin from "~/hooks/mutations/use-post-login";
 
 import Button from "~/components/button";
 import Card from "~/components/card";
 import TextInputField from "~/components/hook-form/text-field";
 
 const LoginView: React.FC = () => {
+  const postLogin = usePostLogin();
+  const router = useRouter();
+
   const formProps = useForm({
     defaultValues: {
       email: "",
@@ -18,8 +24,10 @@ const LoginView: React.FC = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const onSubmit = () => {
-    return null;
+  const onSubmit = (values) => {
+    return postLogin.mutateAsync(values).then(() => {
+      router.push("/homepage");
+    });
   };
 
   return (
