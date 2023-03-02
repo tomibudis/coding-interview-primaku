@@ -1,10 +1,10 @@
 import Link from "next/link";
 import React, { memo } from "react";
+import AuctionItems from "~/views/auction-items";
 
 import useGetItems from "~/hooks/queries/use-get-items";
 import { useGetProfile } from "~/hooks/queries/use-get-profile";
 
-import AuctionItems from "~/components/auction-items";
 import Text from "~/components/text/index";
 
 import ProfileMenu from "../profile-menu";

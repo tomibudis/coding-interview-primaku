@@ -17,3 +17,13 @@ export const registerSchema = yup
 export const depositSchema = yup.object({
   amount: yup.string().nullable().required(),
 });
+
+export const bidSchema = yup.object({
+  currentPrice: yup.string(),
+  bidPrice: yup
+    .number()
+    .moreThan(
+      yup.ref("currentPrice"),
+      "The bid price must be greater than current price!"
+    ),
+});

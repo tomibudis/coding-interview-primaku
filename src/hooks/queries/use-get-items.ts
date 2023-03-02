@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import qs from "qs";
 
 import axios from "~/utils/axios";
 
@@ -22,13 +23,22 @@ interface ItemsResponse {
   createdAt: string;
   updatedAt: string;
 }
-const getItems = async () => {
-  const { data } = await axios.get<ItemsResponse[]>("/items");
+interface Params {
+  filter?: "ongoing" | "completed";
+}
+const getItems = async (params: Params) => {
+  const filterParams = qs.stringify(
+    {
+      filter: params?.filter || "ongoing",
+    },
+    { addQueryPrefix: true }
+  );
+  const { data } = await axios.get<ItemsResponse[]>("/items" + filterParams);
 
   return data;
 };
-const useGetItems = () => {
-  return useQuery(["get-items"], () => getItems());
+const useGetItems = (params?: Params) => {
+  return useQuery(["get-items"], () => getItems(params));
 };
 
 export default useGetItems;
