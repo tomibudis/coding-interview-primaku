@@ -16,6 +16,7 @@ interface ItemsResponse {
   name: string;
   startedPrice: string;
   currentPrice: string;
+  creator: string;
   timeWindow: string;
   bids: Bid[];
   createdAt: string;

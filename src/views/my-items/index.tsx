@@ -45,6 +45,7 @@ const Homepage: React.FC = () => {
         </div>
       </nav>
       <div className="container mx-auto px-4 my-4">
+        <div className="flex px-4 py-4">My Items</div>
         <div className="flex px-4">
           <div className="flex-1">
             <Text>Name</Text>

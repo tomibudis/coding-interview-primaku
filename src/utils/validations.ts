@@ -13,3 +13,7 @@ export const registerSchema = yup
     password: yup.string().min(3).required(),
   })
   .required();
+
+export const depositSchema = yup.object({
+  amount: yup.string().nullable().required(),
+});

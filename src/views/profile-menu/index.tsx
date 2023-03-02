@@ -10,8 +10,11 @@ import useDisclosure from "~/hooks/use-disclosure";
 
 import Text from "~/components/text/index";
 
+import DepositModal from "../modals/deposit";
+
 const ProfileMenu = () => {
   const dropdownMenu = useDisclosure();
+  const depositModal = useDisclosure(false);
   const router = useRouter();
   const profile = useGetProfile();
 
@@ -24,6 +27,10 @@ const ProfileMenu = () => {
 
   return (
     <div>
+      <DepositModal
+        isOpen={depositModal.isOpen}
+        onClose={depositModal.onClose}
+      />
       <button
         id="dropdownInformationButton"
         data-dropdown-toggle="dropdownInformation"
@@ -82,6 +89,14 @@ const ProfileMenu = () => {
             >
               My Items
             </Link>
+          </li>
+          <li>
+            <div
+              onClick={depositModal.onOpen}
+              className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+            >
+              Deposit
+            </div>
           </li>
         </ul>
         <div className="py-2">

@@ -1,3 +1,4 @@
+import cx from "classnames";
 import React from "react";
 
 import Button from "~/components/button";
@@ -8,6 +9,7 @@ interface AuctionItemsProps {
   name: string;
   currentPrice: number;
   duration: string;
+  isHideBid: boolean;
   onBid?: (id: string) => void;
 }
 const AuctionItems: React.FC<AuctionItemsProps> = ({
@@ -15,6 +17,7 @@ const AuctionItems: React.FC<AuctionItemsProps> = ({
   currentPrice,
   duration,
   onBid,
+  isHideBid,
 }) => {
   return (
     <Card className="p-4 sm:max-w-full">
@@ -29,7 +32,11 @@ const AuctionItems: React.FC<AuctionItemsProps> = ({
           <Text>{duration}</Text>
         </div>
         <div className="flex-none">
-          <Button variant="secondary" onClick={onBid}>
+          <Button
+            variant="secondary"
+            onClick={onBid}
+            className={cx({ invisible: isHideBid })}
+          >
             Bid
           </Button>
         </div>
