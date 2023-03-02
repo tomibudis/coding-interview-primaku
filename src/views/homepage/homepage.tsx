@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { memo } from "react";
 import AuctionItems from "~/views/auction-items";
 
@@ -8,10 +9,14 @@ import { useGetProfile } from "~/hooks/queries/use-get-profile";
 import Text from "~/components/text/index";
 
 import ProfileMenu from "../profile-menu";
+import FilterItem from "./filter-item";
 
 const Homepage: React.FC = () => {
+  const router = useRouter();
   const profile = useGetProfile();
-  const items = useGetItems();
+  const items = useGetItems({
+    filter: router.query?.filter === "completed" ? "completed" : "ongoing",
+  });
 
   return (
     <div>
@@ -45,7 +50,9 @@ const Homepage: React.FC = () => {
         </div>
       </nav>
       <div className="container mx-auto px-4 my-4">
-        <div className="flex px-4">
+        <FilterItem />
+
+        <div className="flex px-4 mt-4">
           <div className="flex-1">
             <Text>Name</Text>
           </div>

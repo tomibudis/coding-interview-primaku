@@ -2,16 +2,20 @@ import Link from "next/link";
 import React, { memo } from "react";
 import AuctionItems from "~/views/auction-items";
 
-import useGetItems from "~/hooks/queries/use-get-items";
+import useGetMyItems from "~/hooks/queries/use-get-my-items";
 import { useGetProfile } from "~/hooks/queries/use-get-profile";
+import useDisclosure from "~/hooks/use-disclosure";
 
+import Button from "~/components/button";
 import Text from "~/components/text/index";
 
+import CreateItemModal from "../modals/create-item";
 import ProfileMenu from "../profile-menu";
 
 const Homepage: React.FC = () => {
   const profile = useGetProfile();
-  const items = useGetItems();
+  const items = useGetMyItems();
+  const createItemModal = useDisclosure(false);
 
   return (
     <div>
@@ -44,8 +48,20 @@ const Homepage: React.FC = () => {
           </div>
         </div>
       </nav>
-      <div className="container mx-auto px-4 my-4">
-        <div className="flex px-4 py-4">My Items</div>
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col py-4">
+          <p>My Items</p>
+          <div className="mt-2 flex justify-between">
+            <div>
+              <Button onClick={createItemModal.onOpen}>Create Item</Button>
+              <CreateItemModal
+                isOpen={createItemModal.isOpen}
+                onClose={createItemModal.onClose}
+                onSuccess={items.refetch}
+              />
+            </div>
+          </div>
+        </div>
         <div className="flex px-4">
           <div className="flex-1">
             <Text>Name</Text>

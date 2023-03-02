@@ -27,3 +27,9 @@ export const bidSchema = yup.object({
       "The bid price must be greater than current price!"
     ),
 });
+
+export const itemSchema = yup.object({
+  name: yup.string().nullable().required(),
+  startPrice: yup.number().nullable().required(),
+  timeWindow: yup.number().nullable().required(),
+});
