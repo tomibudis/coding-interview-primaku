@@ -1,6 +1,8 @@
 import cx from "classnames";
 import React from "react";
 
+import { useCountdown } from "~/hooks/use-countdown";
+
 import Button from "~/components/button";
 import Card from "~/components/card";
 import Text from "~/components/text";
@@ -19,17 +21,20 @@ const AuctionItems: React.FC<AuctionItemsProps> = ({
   onBid,
   isHideBid,
 }) => {
+  const [days, hours, minutes, seconds] = useCountdown(duration);
   return (
-    <Card className="p-4 sm:max-w-full">
+    <Card className="p-4 sm:!max-w-full">
       <div className="flex items-center">
         <div className="flex-1">
           <Text>{name}</Text>
         </div>
         <div className="flex-1">
-          <Text>{currentPrice}</Text>
+          <Text>${currentPrice}</Text>
         </div>
         <div className="flex-1">
-          <Text>{duration}</Text>
+          <Text>
+            {days}d {hours}h {minutes}-{seconds}
+          </Text>
         </div>
         <div className="flex-none">
           <Button
