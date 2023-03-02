@@ -4,7 +4,7 @@ import { FormProvider, useForm } from "react-hook-form";
 
 import { bidSchema } from "~/utils/validations";
 
-import usePutDeposit from "~/hooks/mutations/use-put-deposit";
+import usePostBid from "~/hooks/mutations/use-post-bid";
 
 import TextInputField from "~/components/hook-form/text-field";
 import { Modal } from "~/components/modal";
@@ -13,9 +13,15 @@ interface BidModalProps {
   isOpen: boolean;
   initialValues: {
     currentPrice: number;
+    itemId?: string;
   };
   onClose: () => void;
   onSuccess: () => void;
+}
+
+interface FormValues {
+  currentPrice?: number;
+  bidPrice: number;
 }
 const BidModal: React.FC<BidModalProps> = ({
   isOpen,
@@ -23,24 +29,25 @@ const BidModal: React.FC<BidModalProps> = ({
   onSuccess,
   initialValues,
 }) => {
-  const formProps = useForm({
+  const formProps = useForm<FormValues>({
     defaultValues: {
       currentPrice: initialValues?.currentPrice,
       bidPrice: undefined,
     },
     resolver: yupResolver(bidSchema),
   });
-  const putDeposit = usePutDeposit();
+  const postBid = usePostBid({ itemId: initialValues?.itemId });
 
-  const onSubmit = () => {
-    // TODO: post bid price
-
-    onSuccess();
+  const onSubmit = (values: FormValues) => {
+    postBid.mutateAsync({ price: values.bidPrice }).then(() => {
+      onSuccess();
+    });
   };
+
   return (
     <Modal
       title="Bid Item"
-      isLoading={putDeposit.isLoading}
+      isLoading={postBid.isLoading}
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={formProps.handleSubmit(onSubmit)}

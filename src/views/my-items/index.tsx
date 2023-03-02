@@ -61,13 +61,14 @@ const Homepage: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col items-center gap-2 justify-center py-2 mx-auto">
-          {items?.isFetching && "Loading..."}
-          {!items?.isFetching &&
+          {items?.isLoading && "Loading..."}
+          {!items?.isLoading &&
             items.data?.map((item, idx) => {
               return (
                 <AuctionItems
                   key={idx}
                   name={item.name}
+                  itemId={item._id}
                   currentPrice={item.currentPrice}
                   duration={item.timeWindow}
                   isHideBid={item.creator === profile.data._id}

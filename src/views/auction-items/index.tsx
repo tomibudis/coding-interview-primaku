@@ -1,7 +1,8 @@
+import { useQueryClient } from "@tanstack/react-query";
 import cx from "classnames";
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
+import { QUERY_GET_ITEM_KEY } from "~/hooks/queries/use-get-items";
 import { useCountdown } from "~/hooks/use-countdown";
 import useDisclosure from "~/hooks/use-disclosure";
 
@@ -15,6 +16,7 @@ interface AuctionItemsProps {
   name: string;
   currentPrice: number;
   duration: string;
+  itemId: string;
   isHideBid: boolean;
 }
 const DURATION_SHOW = 5; // in second;
@@ -22,8 +24,11 @@ const AuctionItems: React.FC<AuctionItemsProps> = ({
   name,
   currentPrice,
   duration,
+  itemId,
   isHideBid,
 }) => {
+  const queryClient = useQueryClient();
+
   const [days, hours, minutes, seconds] = useCountdown(duration);
   const bidModal = useDisclosure(false);
 
@@ -35,7 +40,7 @@ const AuctionItems: React.FC<AuctionItemsProps> = ({
   const handleSuccessBid = () => {
     const now = new Date();
     setDurationDisabled(now.setSeconds(now.getSeconds() + DURATION_SHOW));
-
+    queryClient.invalidateQueries([QUERY_GET_ITEM_KEY]);
     bidModal.onClose();
   };
 
@@ -52,6 +57,7 @@ const AuctionItems: React.FC<AuctionItemsProps> = ({
         onClose={bidModal.onClose}
         initialValues={{
           currentPrice,
+          itemId,
         }}
         onSuccess={handleSuccessBid}
       />

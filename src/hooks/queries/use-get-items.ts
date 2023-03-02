@@ -37,8 +37,10 @@ const getItems = async (params: Params) => {
 
   return data;
 };
+
+export const QUERY_GET_ITEM_KEY = "get-items";
 const useGetItems = (params?: Params) => {
-  return useQuery(["get-items"], () => getItems(params));
+  return useQuery([QUERY_GET_ITEM_KEY], () => getItems(params));
 };
 
 export default useGetItems;
