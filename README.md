@@ -2,18 +2,18 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://avatars.githubusercontent.com/u/122791452?s=200&v=4" width="200" alt="My Logo" /></a>
 </p>
 
-<h3 align="center">Auction Frontend Web</h3>
+<h3 align="center">Coding Interview Frontend Web</h3>
 
 ## Description
 
-This is a frontend app auction system that is being developed as part of an interview test for Jitera. The app is being built using the Nextjs (typescript) framework
+This is a frontend app to prepare live code interview at Primaku. The app is being built using the Nextjs (typescript) framework, tailwindcss and redux
 
 more detail about the framework here the link https://nextjs.org/
 boilerplate pull from my studio on https://github.com/toms-studio/codelabs-next-web
 
 ## Deployment
 
-host: https://auction-fe-web.vercel.app/
+host: --
 
 ### Lighthouse
 
@@ -32,7 +32,7 @@ host: https://auction-fe-web.vercel.app/
 - tailwindcss
 - tanstack/react-query
 - nextjs@latest
-- zustand
+- redux
 - axios
 - dayjs
 ```

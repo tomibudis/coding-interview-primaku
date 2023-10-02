@@ -1,10 +1,10 @@
 {
-  "name": "auction-fe-web",
-  "version": "1.0.3",
-  "description": "auction frontend web build with nexjs",
+  "name": "coding-interview-primaku",
+  "version": "0.0.1",
+  "description": "coding interview test frontend web build with nexjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomibudis/auction-fe-web"
+    "url": "git+https://github.com/tomibudis/coding-interview-primaku"
   },
   "keywords": [
     "next",
@@ -12,7 +12,7 @@
     "typescript"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/tomibudis/auction-fe-web#readme",
+  "homepage": "https://github.com/tomibudis/coding-interview-primaku#readme",
   "author": "tomibudis",
   "scripts": {
     "dev": "next dev",

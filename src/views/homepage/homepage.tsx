@@ -1,91 +1,11 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { memo } from "react";
-import AuctionItems from "~/views/auction-items";
+import React from "react";
 
-import useGetItems from "~/hooks/queries/use-get-items";
-import { useGetProfile } from "~/hooks/queries/use-get-profile";
-
-import Text from "~/components/text/index";
-
-import ProfileMenu from "../profile-menu";
-import FilterItem from "./filter-item";
-
-const Homepage: React.FC = () => {
-  const router = useRouter();
-  const profile = useGetProfile();
-  const items = useGetItems({
-    filter: router.query?.filter === "completed" ? "completed" : "ongoing",
-  });
-
+const Homepage = () => {
   return (
-    <div>
-      <nav className="font-sans text-center py-4 px-6 bg-white shadow sm:items-baseline w-full">
-        <div className="container mx-auto px-4">
-          <div className="w-full flex flex-col sm:flex-row sm:text-left sm:justify-between items-center">
-            <div className="mb-2 sm:mb-0">
-              <Link
-                href="/homepage"
-                className="flex items-center text-md font-extrabold no-underline text-grey-darkest hover:text-blue-dark"
-              >
-                <img
-                  className="w-6 h-6 mr-2"
-                  src="/icon-192x192.png"
-                  alt="logo"
-                />
-                Jitera Auction
-              </Link>
-            </div>
-            <div
-              className="flex items-center gap-4
-            "
-            >
-              <Text>
-                Balance: $
-                {profile.isFetching ? "loading..." : profile.data?.balance}
-              </Text>
-              <ProfileMenu />
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div className="container mx-auto px-4 my-4">
-        <FilterItem />
-
-        <div className="flex px-4 mt-4">
-          <div className="flex-1">
-            <Text>Name</Text>
-          </div>
-          <div className="flex-1">
-            <Text>Current Price</Text>
-          </div>
-          <div className="flex-1">
-            <Text>Duration</Text>
-          </div>
-          <div className="flex-none">
-            <Text className="px-5">Bid</Text>
-          </div>
-        </div>
-        <div className="flex flex-col items-center gap-2 justify-center py-2 mx-auto">
-          {items?.isLoading && "Loading..."}
-          {!items?.isLoading &&
-            items.data?.map((item, idx) => {
-              return (
-                <AuctionItems
-                  key={idx}
-                  name={item.name}
-                  itemId={item._id}
-                  currentPrice={item.currentPrice}
-                  duration={item.timeWindow}
-                  isHideBid={item.creator === profile.data._id}
-                  onBid={() => null}
-                />
-              );
-            })}
-        </div>
-      </div>
+    <div className="w-screen h-screen flex justify-center items-center">
+      <h1>Homepage</h1>
     </div>
   );
 };
 
-export default memo(Homepage);
+export default Homepage;

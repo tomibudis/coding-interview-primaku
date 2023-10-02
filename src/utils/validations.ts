@@ -1,35 +1,8 @@
 import * as yup from "yup";
 
-export const loginSchema = yup
+export const exampleValidation = yup
   .object({
     email: yup.string().email().required(),
     password: yup.string().min(3).required(),
   })
   .required();
-
-export const registerSchema = yup
-  .object({
-    email: yup.string().email().required(),
-    password: yup.string().min(3).required(),
-  })
-  .required();
-
-export const depositSchema = yup.object({
-  amount: yup.string().nullable().required(),
-});
-
-export const bidSchema = yup.object({
-  currentPrice: yup.string(),
-  bidPrice: yup
-    .number()
-    .moreThan(
-      yup.ref("currentPrice"),
-      "The bid price must be greater than current price!"
-    ),
-});
-
-export const itemSchema = yup.object({
-  name: yup.string().nullable().required(),
-  startPrice: yup.number().nullable().required(),
-  timeWindow: yup.number().nullable().required(),
-});
