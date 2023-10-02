@@ -1,14 +1,16 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RenderOptions, render } from "@testing-library/react";
 import React, { FC, ReactElement } from "react";
-import { Provider, createStore } from "~/store";
+import { Provider } from "react-redux";
+
+import { store } from "../store";
 
 const queryClient = new QueryClient({});
 
 const ReactQueryProvider: FC = ({ children }) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Provider createStore={createStore}>{children}</Provider>
+      <Provider store={store}>{children}</Provider>
     </QueryClientProvider>
   );
 };
