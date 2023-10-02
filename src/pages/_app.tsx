@@ -2,9 +2,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { AppProps } from "next/app";
 import React from "react";
-import { Provider, createStore } from "~/store";
+import { Provider } from "react-redux";
 
 import "../../src/styles/globals.css";
+import { store } from "../store";
 
 const configQuery = {
   defaultOptions: {
@@ -20,7 +21,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   const [queryClient] = React.useState(() => new QueryClient(configQuery));
   return (
     <QueryClientProvider client={queryClient}>
-      <Provider createStore={createStore}>
+      <Provider store={store}>
         <Component {...pageProps} />
         {isDevEnv && <ReactQueryDevtools />}
       </Provider>

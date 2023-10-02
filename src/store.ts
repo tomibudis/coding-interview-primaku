@@ -1,18 +1,12 @@
-import create, { StoreApi } from "zustand";
-import createContext from "zustand/context";
-import { devtools } from "zustand/middleware";
+import { configureStore } from "@reduxjs/toolkit";
 
-export interface StoreState {
-  counter: number;
-  setCounter: (_value: number) => void;
-}
+import counterSlice from "./modules/counter/slice";
 
-export const { Provider, useStore } = createContext<StoreApi<StoreState>>();
+export const store = configureStore({
+  reducer: {
+    counter: counterSlice,
+  },
+});
 
-export const createStore = () =>
-  create<StoreState>()(
-    devtools((set) => ({
-      counter: 0,
-      setCounter: (value) => set({ counter: value }),
-    }))
-  );
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
